@@ -26,7 +26,7 @@ export default function MantenimientoPage() {
           Se viene algo <span className="text-gradient">grande</span>.
         </h1>
         <p className="lede maintenance-page__lede">
-          Estamos preparando la próxima versión de OG Circle. Volvemos en breve.
+          Estamos preparando la primera versión de OG Circle.
         </p>
       </div>
     </main>
