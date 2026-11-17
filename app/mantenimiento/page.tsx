@@ -1,35 +1,33 @@
+import Image from 'next/image';
 import type { Metadata } from 'next';
 
 // Página servida por middleware.ts cuando MAINTENANCE_MODE=true (rewrite +
 // 503). Visitarla directo sin el middleware activo también funciona (devuelve
 // 200 igual), por si alguna vez hace falta linkearla a mano.
 export const metadata: Metadata = {
-  title: 'Volvemos pronto — OG Circle by VEGROUP',
+  title: 'Algo grande se viene — OG Circle by VEGROUP',
   robots: { index: false, follow: false },
 };
 
-const WHATSAPP_MESSAGE = `Hola, vengo de la web de VeGroup.
-Tengo una duda sobre OG Circle: `;
-const WHATSAPP_HREF = `https://wa.me/5491176392303?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
-
 export default function MantenimientoPage() {
   return (
-    <main className="error-page">
-      <div className="wrap error-page__inner">
-        <span className="tag-label">Pausa breve</span>
-        <h2 className="error-page__title">Estamos actualizando el sitio</h2>
-        <p className="lede error-page__lede">
-          Volvemos a estar en línea en las próximas horas. Si necesitás algo
-          urgente, escribinos por WhatsApp.
+    <main className="maintenance-page">
+      <div className="wrap maintenance-page__inner">
+        <Image
+          src="/images/logo-icon.png"
+          alt="OG Circle by VEGROUP"
+          width={40}
+          height={46}
+          className="maintenance-page__logo"
+          priority
+        />
+        <span className="tag-label">Próximamente</span>
+        <h1 className="maintenance-page__title">
+          Se viene algo <span className="text-gradient">grande</span>.
+        </h1>
+        <p className="lede maintenance-page__lede">
+          Estamos preparando la próxima versión de OG Circle. Volvemos en breve.
         </p>
-        <a
-          href={WHATSAPP_HREF}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="btn-gradient error-page__btn"
-        >
-          Escribir por WhatsApp
-        </a>
       </div>
     </main>
   );

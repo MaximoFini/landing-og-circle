@@ -18,11 +18,15 @@ import { NextResponse, type NextRequest } from 'next/server';
 // el historial/analytics). Sin esa clave, cualquiera ve la página de
 // mantenimiento, incluso el propio equipo.
 export const config = {
-  // Corre en todo excepto los assets de Next y los íconos/manifest de la
-  // raíz: si esos quedan bloqueados, la página de mantenimiento misma
-  // pierde su favicon y el manifest tira 503 en el devtools sin razón.
+  // Corre en todo excepto los assets de Next y cualquier archivo estático
+  // servido tal cual (public/images, /fonts, /textures, /audio, favicon,
+  // manifest, robots, sitemap...). Filtrar por extensión en vez de listar
+  // carpetas: la primera versión solo excluía los íconos de la raíz y
+  // dejaba afuera /images/*, así que la propia página de mantenimiento no
+  // podía cargar su logo (devolvía 503) ni, con el bypass activo, cargaban
+  // las imágenes/fuentes de la landing real.
   matcher: [
-    '/((?!_next/static|_next/image|favicon.ico|icon.png|apple-icon.png|opengraph-image.png|manifest.webmanifest|robots.txt|sitemap.xml).*)',
+    '/((?!_next/static|_next/image|.*\\.(?:ico|png|jpg|jpeg|webp|gif|svg|avif|woff2?|mp3|mp4|txt|xml|webmanifest)$).*)',
   ],
 };
 
