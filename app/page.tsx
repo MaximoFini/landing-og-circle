@@ -289,9 +289,14 @@ export default function Home() {
                 <div>
                   <span className="tag-label">Fundadores</span>
                   <h2 style={{ marginBottom: '20px' }}>Quiénes Somos</h2>
-                  <p className="lede">
-                    VeGroup es un importador con años de trayectoria operando fletes internacionales entre Asia, Europa y Argentina. Armamos OG Circle porque mis conocidos me pedían el contacto de mis agentes de confianza y no había una forma segura de integrarlos al flujo de trabajo diario sin una plataforma de soporte.
-                  </p>
+                  <div className="founder-copy">
+                    <p className="lede">
+                      Somos dos hermanos que empezamos a importar desde China en 2018. Con los años pasamos de tener negocios físicos a construir un servicio logístico integral que hoy usan más de 2.000 personas todos los meses.
+                    </p>
+                    <p className="founder-why">
+                      <strong>¿Por qué armamos OG Circle?</strong> Porque vimos demasiada desinformación y a muchos comerciantes y emprendedores que querían importar y no sabían por dónde empezar. Por eso juntamos todo en un solo lugar: un sistema de costos, agentes verificados, herramientas de búsqueda de productos y especialistas que te acompañan en cada etapa, desde la importación hasta la venta local.
+                    </p>
+                  </div>
                   <StoryCollapse />
                 </div>
                 <div className="founder-photos">

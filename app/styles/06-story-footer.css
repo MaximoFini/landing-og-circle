@@ -227,6 +227,32 @@
   align-items: center;
 }
 
+/* Two-paragraph copy: lede carries the hook, the "why" sits a step smaller
+   so the column doesn't outweigh the photos. */
+.founder-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.founder-copy .lede {
+  color: var(--text-primary);
+}
+
+.founder-why {
+  font-size: clamp(14px, 1.3vw, 16px);
+  line-height: 1.7;
+  color: var(--text-secondary);
+  max-width: 58ch;
+  padding-left: 16px;
+  border-left: 2px solid var(--accent-from);
+}
+
+.founder-why strong {
+  display: block;
+  margin-bottom: 6px;
+}
+
 /* Both photos are cropped to the same 4:5 frame and head scale so they read
    as a pair. */
 .founder-photos {
